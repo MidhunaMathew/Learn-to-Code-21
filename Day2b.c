@@ -1,4 +1,9 @@
-//Write a C Program to perform Read and Print operations using the four basic data types in C. (int, float, char & double
+//Write a C Program to perform Read and Print operations using the four basic data types in C. (int, float, char & double)
+//Sample Input 
+//z
+//100
+//27
+//99
 #include <stdio.h>
 int main()
 {
