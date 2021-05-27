@@ -48,6 +48,7 @@ The element '0' does not exist in this matrix. */
 
 
 #include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
@@ -70,11 +71,13 @@ int main()
         {
             if(a[i][j]==k)
             {
-                printf("Element found at (%d,%d)",i,j);
-                return 0;
+                printf("Element found at (%d,%d)\n",i,j);
+                break;
             }
         }
+        
     }   
+    return 0;
     printf("Element not found");
     return 0;
 }
