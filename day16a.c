@@ -45,8 +45,6 @@ The given matrix is,
 3 2
 5 6
 The element '0' does not exist in this matrix. */
-
-
 #include <stdio.h>
 #include <stdio.h>
 #include <string.h>
@@ -55,7 +53,7 @@ The element '0' does not exist in this matrix. */
 
 int main() 
 {
-    int m,n,i,j,a[20][20],k;
+    int m,n,i,j,a[20][20],k,c=0;
     scanf("%d%d",&m,&n);
     for(i=0;i<m;i++)
     {
@@ -65,19 +63,23 @@ int main()
         }
     }
     scanf("%d",&k);
+    
     for(i=0;i<m;i++)
     {
         for(j=0;j<n;j++)
-        {
-            if(a[i][j]==k)
             {
-                printf("Element found at (%d,%d)\n",i,j);
-                break;
-            }
-        }
-        
-    }   
-    return 0;
-    printf("Element not found");
+                if(a[i][j]==k)
+                {
+                        printf("Element found at (%d,%d)\n",i,j); 
+                        c++;
+                }
+            }    
+    }         
+
+    if(c == 0)
+    {
+        printf("Element not found");
+        return 0; 
+    }          
     return 0;
 }
