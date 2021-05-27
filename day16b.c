@@ -53,3 +53,61 @@ ERROR
 Explanation 1
 
 Both the matrices do not satisfy the condition, hence cannot be multiplied together. */
+
+#include <stdio.h>
+ 
+int main()
+{
+  int m, n, p, q, i, j, k, sum = 0;
+  int a[10][10], b[10][10], multi[10][10];
+  scanf("%d%d", &m, &n);
+  for (  i = 0 ; i < m ; i++ )
+  {
+    for ( j = 0 ; j < n ; j++ )
+    {
+      scanf("%d", &a[i][j]);
+    }
+  }    
+  scanf("%d%d", &p, &q);
+ 
+  if ( n != p )
+  {  
+    printf("ERROR");
+  }
+  else
+  {
+        for ( i = 0 ; i < p ; i++ )
+        {
+          for ( j = 0 ; j < q ; j++ )
+          {
+            scanf("%d", &b[i][j]);
+          }
+        }
+        for ( i= 0 ; i < m ; i++ )
+        {
+          for ( j= 0 ; j < q ; j++ )
+          {
+            for ( k = 0 ; k < p ; k++ )
+            {
+              sum = sum + a[i][k]*b[k][j];
+            }
+
+            multi[i][j] = sum;
+            sum = 0;
+          }
+        }
+
+        for ( i = 0 ; i < m ; i++ )
+        {
+          for ( j = 0 ; j < q ; j++ )
+          {
+            printf("%d ", multi[i][j]);
+          }
+          printf("\n");
+        }   
+      
+
+  }
+ 
+  return 0;
+}
